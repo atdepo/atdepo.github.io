@@ -3,47 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Academic Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <title>Antonio Della Porta</title>
+    <meta name="description" content="Portfolio website of Dr. Antonio Della Porta, AI Researcher & Software Engineer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
+    </script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Your Name</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#publications">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#conferences">Conferences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#milestones">Milestones</a>
-                    </li>
-                </ul>
+<body class="bg-gray-100">
+<header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
+    <nav class="container mx-auto px-6 py-3">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="#home" class="text-gray-800 hover:text-primary transition duration-300">Home</a></li>
+            <li><a href="#publications" class="text-gray-800 hover:text-primary transition duration-300">Publications</a></li>
+            <li><a href="#conferences" class="text-gray-800 hover:text-primary transition duration-300">Conferences</a></li>
+            <li><a href="#experience" class="text-gray-800 hover:text-primary transition duration-300">Experience</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="bg-pattern-1 text-white min-h-screen flex flex-col justify-center">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col lg:flex-row items-center mb-12">
+                <div class="lg:w-1/3 mb-10 lg:mb-0">
+                    <div class="photo-container mx-auto">
+                        <img id="profile-photo" src="photo.jpg" alt="Researcher's photo" class="w-full h-full object-cover transition duration-300 transform hover:scale-105 profile-photo" />
+                    </div>
+                </div>
+                <div class="lg:w-2/3 lg:pl-12">
+                    <h1 id="researcher-name" class="text-5xl font-bold mb-4">Dr. Antonio Della Porta</h1>
+                    <p id="researcher-title" class="text-2xl mb-6">AI Researcher & Software Engineer</p>
+                    <div id="short-bio" class="text-lg mb-6">
+                        <!-- A short, impactful bio sentence will go here -->
+                    </div>
+                    <a href="#full-bio" class="bg-white text-primary font-bold py-2 px-4 rounded hover:bg-gray-100 transition duration-300">Read Full Bio</a>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <main id="main-content">
-        <!-- Content will be dynamically loaded here -->
-    </main>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </section>
+    <div class="scroll-indicator">
+        <span class="arrow"></span>
+    </div>
+    <section id="full-bio" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-primary">About Me</h2>
+            <div id="about-content" class="text-lg text-gray-700 space-y-4">
+                <!-- Full bio content will be inserted here -->
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <section id="publications" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-primary">Publications</h2>
+            <div class="publications-scroll-container">
+                <div id="publications-container" class="flex space-x-6 overflow-x-auto pb-6">
+                    <!-- Publication cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conferences" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-primary">Conferences Attended</h2>
+            <div class="conferences-scroll-container">
+                <div id="conferences-container" class="flex space-x-6 overflow-x-auto pb-6">
+                    <!-- Conference cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-primary">Experience Timeline</h2>
+            <div class="relative wrap overflow-hidden p-10 h-full">
+                <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
+                <div id="timeline-content">
+                    <!-- Timeline items will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-primary text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2024 Antonio Della Porta. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
