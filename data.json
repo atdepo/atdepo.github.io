@@ -8,10 +8,9 @@
     "Hello! \uD83D\uDC4B I'm Antonio Della Porta, a Software Engineer passionate about innovative technologies and cutting-edge software solutions\uD83D\uDCBB.",
     "In 2018, I dove into the world of programming and software development through my Bachelor's degree\uD83D\uDE80. My fascination with advanced computing led me to complete a thesis on Quantum Computing \uD83D\uDD2C, exploring this non-deterministic computation model.",
     "Driven by curiosity, I pursued a Master's degree in Software Engineering and IT Management\uD83D\uDEE0\uFE0F. My master's thesis focused on developing a novel, tool-supported inspection procedure for diagnosing community smells, bridging theoretical concepts with practical applications\uD83D\uDD0D\uD83E\uDD1D.",
-    "Throughout the years of my academic journey, I've also worked as a Software Engineer applying my skills to real-world, large-scale data management projects for multinational companies\uD83C\uDFE2\uD83D\uDCCA. Currently, I'm delving deep into the fascinating field of Explainable AI (XAI)\uD83E\uDDE0\uD83D\uDCA1.",
+    "Throughout the years of my academic journey, I've also worked as a Software Engineer applying my skills to real-world, large-scale data management projects for multinational companies\uD83C\uDFE2\uD83D\uDCCA. Currently, I'm delving deep into the fascinating field of Explainable AI (XAI) and Prompt Engineering\uD83E\uDDE0\uD83D\uDCA1.",
     "I'm exploring ways to make complex AI models more transparent and interpretable, aiming to bridge the gap between powerful machine learning algorithms and human understanding. My focus is on developing techniques that can provide clear, understandable explanations for AI decisions, crucial for building trust and enabling wider adoption of AI systems across various domains\uD83D\uDD0D\uD83E\uDD16.",
-    "I'm passionate about pushing the boundaries of software engineering and AI, with a particular interest in innovative technologies, data management, and improving both AI systems and developer communities\uD83D\uDD2E\uD83D\uDCA1. I'm always excited to take on new challenges and contribute to the ever-evolving fields of Computer Science and Artificial Intelligence\uD83C\uDF1F.",
-    "Let's connect and explore the endless possibilities at the intersection of software engineering and explainable AI! \uD83E\uDD1D\uD83C\uDF0D"
+    "I'm passionate about pushing the boundaries of software engineering and AI, with a particular interest in innovative technologies, data management, and improving both AI systems and developer communities\uD83D\uDD2E\uD83D\uDCA1. I'm always excited to take on new challenges and contribute to the ever-evolving fields of Computer Science and Artificial Intelligence\uD83C\uDF1F."
     ]
   },
   "conferences": [
@@ -38,6 +37,14 @@
       "venueImage": "/venues/qualita.jpg",
       "presentation": "3rd Conference on System and Service Quality",
       "link": "https://qualitawg.github.io"
+    },
+    {
+      "name": "EASE",
+      "location": "Salerno, Italy",
+      "date": "June 18, 2024",
+      "venueImage": "/venues/wails.jpg",
+      "presentation": "International Conference on Evaluation and Assessment in Software Engineering (EASE)",
+      "link": "https://conf.researchr.org/home/ease-2024"
     }
   ],
   "experience": [
@@ -66,6 +73,13 @@
       "title": "Research Assistant",
       "company": "SeSaLab @ University of Salerno",
       "startDate": "January 2024",
+      "endDate": "October 2024",
+      "description": "Researching XAI in software development. Focus on AI-driven code analysis and optimization techniques."
+    },
+    {
+      "title": "Ph.D Student",
+      "company": "SeSaLab @ University of Salerno",
+      "startDate": "November 2024",
       "endDate": "Present",
       "description": "Researching XAI in software development. Focus on AI-driven code analysis and optimization techniques."
     }

@@ -1,6 +1,14 @@
 {
   "publications": [
     {
+      "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
+      "authors": ["Voria, G.","Pentangelo V.", "Della Porta, A.","Lambiase, S.", "Catolino, G.", "Palomba, F."],
+      "venue": "ICSME - International Conference on Software Maintenance and Evolution",
+      "year": 2022,
+      "pdfFile": "ICSME_CADOCS_2022.pdf",
+      "type": "Tool Demo Paper"
+    },
+    {
       "title": "Using Large Language Models to Support Software Engineering Documentation in Waterfall Life Cycles: Are We There Yet?",
       "authors": ["Della Porta, A.", "Recupito, G.", "De Martino, V.", "Catolino, G.", "Di Nucci, D.", "Palomba, F."],
       "venue": "ITAL-IA - 4th National Conference on Artificial Intelligence",
@@ -8,13 +16,14 @@
       "pdfFile": "ITALIA_WATERFALL.pdf",
       "type": "Research Paper"
     },
+
     {
-      "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
-      "authors": ["Voria, G.","Pentangelo V.", "Della Porta, A.","Lambiase, G.", "Catolino, G.", "Palomba, F."],
-      "venue": "ICSME - International Conference on Software Maintenance and Evolution",
-      "year": 2022,
-      "pdfFile": "ICSME_CADOCS_2022.pdf",
-      "type": "Tool Demo Paper"
+      "title": "A Novel, Tool-Supported Catalog of Community Smell Symptoms",
+      "authors": ["Della Porta, A.","Lambiase, G.", "Catolino, G.", "Ferrucci, F.", "Palomba, F."],
+      "venue": "Pre-print (Under Submission)",
+      "year": 2024,
+      "pdfFile": "CS_SYMPTOMS_2024.pdf",
+      "type": "Research Paper"
     }
   ]
 }
