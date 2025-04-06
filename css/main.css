@@ -1,0 +1,363 @@
+/* Variables */
+:root {
+    --primary-color: #4D6DE3;           /* Bright indigo blue */
+    --primary-gradient: linear-gradient(135deg, #4D6DE3 0%, #8094F1 100%);
+    --secondary-color: #6B4DE3;         /* Purple */
+    --secondary-gradient: linear-gradient(135deg, #6B4DE3 0%, #9E80F1 100%);
+    --accent-color: #E34D9E;            /* Magenta accent */
+    --accent-light: #F180C5;            /* Light magenta for subtle highlights */
+    --light-color: #F5F7FF;             /* Very light blue-tinted background */
+    --dark-color: #2A2D47;              /* Dark blue-purple for footer */
+    --text-color: #2D3142;              /* Dark blue-gray for main text */
+    --light-text: #575B74;              /* Medium blue-gray for secondary text */
+    --card-bg: #FFFFFF;                 /* White for cards */
+    --border-color: #E8EDFF;            /* Light blue border color */
+    --font-main: 'Quicksand', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    font-weight: 400;
+}
+
+/* Typography */
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+p {
+        font-family: var(--font-heading);
+
+    margin-bottom: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Layout Utilities */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+/* Global Components */
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.section-title span {
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin-top: 0.7rem;
+    border-radius: 2px;
+    background: var(--secondary-gradient);
+}
+
+/* Button Styles with Solid Design */
+.btn {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    background: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(77, 109, 227, 0.2);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Create a double border effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--primary-gradient);
+    z-index: -2;
+    border-radius: 14px;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-color);
+    z-index: -1;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(77, 109, 227, 0.3);
+    color: white;
+}
+
+.btn:hover::after {
+    background: var(--secondary-color);
+}
+
+/* Add 3D button effect with pseudo-elements */
+.btn-3d {
+    position: relative;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 8px 20px rgba(77, 109, 227, 0.2);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    transform: perspective(800px);
+}
+
+.btn-3d::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: var(--secondary-color);
+    bottom: -10px;
+    left: 0;
+    border-radius: 0 0 12px 12px;
+    transform: rotateX(90deg);
+    transform-origin: top;
+}
+
+.btn-3d::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: var(--accent-color);
+    right: -10px;
+    top: 0;
+    border-radius: 0 12px 12px 0;
+    transform: rotateY(90deg);
+    transform-origin: left;
+}
+
+.btn-3d:hover {
+    transform: perspective(800px) translateY(-5px) translateZ(10px);
+    box-shadow: 0 15px 30px rgba(77, 109, 227, 0.3);
+}
+
+/* Outline button style */
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary-gradient);
+    z-index: -1;
+    transition: all 0.5s ease;
+    transform: skewX(-15deg);
+}
+
+.btn-outline:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(77, 109, 227, 0.25);
+}
+
+.btn-outline:hover::before {
+    width: 120%;
+}
+
+/* Icon button style */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 8px 20px rgba(77, 109, 227, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon i {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(107, 77, 227, 0.3);
+}
+
+.btn-icon:hover i {
+    transform: translateX(5px);
+}
+
+/* Download button style - special case for the CV */
+.cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 0.8rem 1.8rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(77, 109, 227, 0.15);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cv-download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-gradient);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.cv-download-btn i {
+    font-size: 1.2rem;
+    transition: all 0.4s ease;
+}
+
+.cv-download-btn:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(77, 109, 227, 0.3);
+}
+
+.cv-download-btn:hover::before {
+    opacity: 1;
+}
+
+.cv-download-btn:hover i {
+    transform: translateY(-4px);
+}
+
+/* Accent button variation */
+.btn-accent {
+    background: var(--accent-color);
+}
+
+.btn-accent::before {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+}
+
+.btn-accent::after {
+    background: var(--accent-color);
+}
+
+.btn-accent:hover::after {
+    background: var(--accent-light);
+}
+
+/* Secondary button variation */
+.btn-secondary {
+    background: var(--secondary-color);
+}
+
+.btn-secondary::before {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #9E80F1 100%);
+}
+
+.btn-secondary::after {
+    background: var(--secondary-color);
+}
+
+.btn-secondary:hover::after {
+    background: #9E80F1;
+}

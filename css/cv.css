@@ -1,0 +1,210 @@
+/* CV Section with Solid Design - Without Type Tags */
+.cv {
+    background-color: white;
+    position: relative;
+    padding: 4rem 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 10h10v10H10V10zm-5 5h5v5H5v-5z' fill='%234D6DE3' fill-opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Add a timeline line with adjusted positioning */
+.cv-grid::before {
+    content: '';
+    position: absolute;
+    top: 60px; /* Start below the section title */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: calc(100% - 60px);
+    background: rgba(77, 109, 227, 0.1);
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.cv-section {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cv-section h3 {
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    text-align: center;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: 600;
+    background: var(--primary-gradient);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(77, 109, 227, 0.2);
+    z-index: 5; /* Ensure it's above the timeline */
+}
+
+.cv-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    z-index: 5; /* Ensure it's above the timeline */
+}
+
+.cv-item {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(77, 109, 227, 0.08);
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Create the marker effect on timeline with improved positioning */
+.cv-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    z-index: 3;
+    box-shadow: 0 0 0 5px rgba(77, 109, 227, 0.1);
+}
+
+/* Add a solid border top */
+.cv-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-gradient);
+    border-radius: 12px 12px 0 0;
+}
+
+.cv-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(77, 109, 227, 0.15);
+}
+
+.cv-item:hover::before {
+    background: var(--primary-color);
+    border-color: white;
+    transform: translateX(-50%) scale(1.2);
+}
+
+.cv-item-title {
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.cv-item-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.cv-item-subtitle {
+    font-style: italic;
+    color: var(--light-text);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.cv-item-date {
+    font-size: 0.85rem;
+    color: white;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: var(--secondary-gradient);
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(107, 77, 227, 0.2);
+}
+
+/* Hide type tags */
+.cv-item-type-tag {
+    display: none;
+}
+
+.cv-item p {
+    margin-top: 0.8rem;
+    color: var(--light-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.cv-item p::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    font-size: 2rem;
+    color: rgba(77, 109, 227, 0.1);
+    font-family: serif;
+}
+
+.cv-item p::after {
+    content: '"';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 2rem;
+    color: rgba(77, 109, 227, 0.1);
+    font-family: serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cv-section h3 {
+        width: 80%;
+        padding: 0.7rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .cv-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .cv-item-title {
+        font-size: 1.1rem;
+    }
+}

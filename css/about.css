@@ -1,0 +1,629 @@
+/* Updated Hero and About Section with Improved Responsiveness */
+.hero-about {
+    min-height: auto;
+    background-color: white;
+    color: var(--text-color);
+    padding: 100px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background patterns - more subtle */
+.hero-about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 10% 10%, rgba(77, 109, 227, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 30%, rgba(107, 77, 227, 0.03) 0%, transparent 20%);
+    z-index: 0;
+}
+
+/* Corner accent - smaller */
+.hero-about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, transparent 80%, rgba(77, 109, 227, 0.05) 80%);
+    z-index: 0;
+}
+
+.hero-about-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Compact Hero Content - Single Card Design */
+.hero-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(77, 109, 227, 0.1);
+    box-shadow: 0 15px 35px rgba(77, 109, 227, 0.1);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative corners */
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    opacity: 0.05;
+    border-radius: 0 0 60px 0;
+}
+
+.hero-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--accent-color);
+    opacity: 0.05;
+    border-radius: 80px 0 0 0;
+}
+
+/* Left column containing profile image and info boxes */
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Profile Image - Adjusted for new layout */
+.profile-image {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* More compact frame */
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border: 3px solid var(--primary-color);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    z-index: -2;
+    opacity: 0.15;
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover::before {
+    opacity: 0.4;
+    transform: translate(-3px, -3px);
+}
+
+.profile-image:hover::after {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.profile-image img {
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(77, 109, 227, 0.15);
+    max-width: 100%;
+    height: auto;
+    border: 4px solid white;
+    transition: all 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(77, 109, 227, 0.2);
+}
+
+/* Info boxes now in left column */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(77, 109, 227, 0.05);
+    border: 1px solid rgba(77, 109, 227, 0.08);
+    transition: all 0.3s ease;
+    gap: 12px;
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(77, 109, 227, 0.1);
+    border-color: rgba(77, 109, 227, 0.15);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.info-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 109, 227, 0.1);
+    color: var(--primary-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content h4 {
+    margin: 0 0 0.2rem;
+    color: var(--text-color);
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.info-content p {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Profile Content Container (Right column) */
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* Header Section */
+.profile-header {
+    margin-bottom: 5px;
+}
+
+.hero-name {
+    font-size: 2.4rem;
+    margin-bottom: 0.3rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Smaller underline */
+.hero-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--secondary-gradient);
+    transition: all 0.4s ease;
+    opacity: 0.5;
+    border-radius: 3px;
+}
+
+.profile-header:hover .hero-name::after {
+    width: 70%;
+}
+
+.hero-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+    font-weight: 600;
+    padding-left: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.hero-specialty {
+    font-size: 1rem;
+    color: var(--light-text);
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: rgba(77, 109, 227, 0.05);
+    border-radius: 6px;
+    margin-top: 0.4rem;
+}
+
+/* Compact Social Icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 0.8rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(77, 109, 227, 0.15);
+    background: var(--primary-color);
+}
+
+.social-icons a:nth-child(2) {
+    background: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.social-icons a:nth-child(3) {
+    background: var(--accent-color);
+    border-radius: 4px;
+    transform: rotate(45deg);
+}
+
+.social-icons a:nth-child(3) i {
+    transform: rotate(-45deg);
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(77, 109, 227, 0.2);
+}
+
+.social-icons a:nth-child(3):hover {
+    transform: translateY(-3px) rotate(45deg);
+}
+
+/* Bio section */
+.about-bio {
+    padding-top: 10px;
+    position: relative;
+}
+
+/* Bio paragraphs */
+.about-bio p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+/* Smaller paragraph accent lines */
+.about-bio p::before {
+    content: '';
+    position: absolute;
+    top: 0.4rem;
+    left: 0;
+    width: 2px;
+    height: calc(100% - 0.8rem);
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+    opacity: 0.3;
+}
+
+/* First paragraph styling */
+.about-bio p:first-child {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.about-bio p:first-child::before {
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    opacity: 0.5;
+    width: 3px;
+}
+
+.about-bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* Text highlight */
+.about-highlight {
+    background: linear-gradient(to bottom, transparent 60%, rgba(77, 109, 227, 0.1) 40%);
+    padding: 0 2px;
+    font-weight: 500;
+}
+
+/* CV download button container */
+.cv-download-container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Download button */
+.cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(77, 109, 227, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cv-download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.cv-download-btn:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(77, 109, 227, 0.15);
+}
+
+.cv-download-btn:hover::before {
+    width: 100%;
+}
+
+.cv-download-btn i {
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cv-download-btn:hover i {
+    transform: translateY(-2px);
+}
+
+/* IMPROVED RESPONSIVE STYLES */
+/* Large tablets and smaller desktops */
+@media (max-width: 1200px) {
+    .hero-card {
+        grid-template-columns: 240px 1fr;
+        gap: 25px;
+    }
+}
+
+/* Medium-sized tablets */
+@media (max-width: 992px) {
+    .hero-card {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .profile-column {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 20px;
+        max-width: 100%;
+        align-items: start;
+    }
+
+    .profile-image {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .profile-info {
+        margin-top: 0;
+    }
+
+    .info-item {
+        padding: 10px;
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .hero-name {
+        font-size: 2.2rem;
+    }
+
+    .hero-title {
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 5px;
+        display: inline-block;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .about-bio p {
+        padding-left: 1rem;
+    }
+}
+
+/* Smaller tablets and large phones */
+@media (max-width: 768px) {
+    .profile-column {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .profile-image {
+        width: 170px;
+        margin: 0 auto;
+    }
+
+    .profile-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .info-content h4 {
+        font-size: 0.7rem;
+    }
+
+    .info-content p {
+        font-size: 0.8rem;
+    }
+
+    .hero-card {
+        padding: 20px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 576px) {
+    .hero-about {
+        padding: 85px 0 40px;
+    }
+
+    .hero-card {
+        padding: 15px;
+    }
+
+    .profile-info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .profile-image {
+        width: 150px;
+    }
+
+    .profile-image::before {
+        top: -5px;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+    }
+
+    .profile-image::after {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero-name {
+        font-size: 1.8rem;
+    }
+
+    .hero-title {
+        font-size: 1.1rem;
+    }
+
+    .hero-specialty {
+        font-size: 0.9rem;
+    }
+
+    .about-bio p {
+        font-size: 0.9rem;
+        padding-left: 0.8rem;
+    }
+
+    .about-bio p:first-child {
+        font-size: 0.95rem;
+    }
+
+    .about-bio p::before {
+        width: 1px;
+    }
+
+    .about-bio p:first-child::before {
+        width: 2px;
+    }
+
+    .cv-download-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    .profile-image {
+        width: 120px;
+    }
+
+    .hero-name {
+        font-size: 1.6rem;
+    }
+
+    .hero-title {
+        font-size: 1rem;
+    }
+
+    .hero-specialty {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .social-icons a {
+        width: 34px;
+        height: 34px;
+        font-size: 0.8rem;
+    }
+
+    .info-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+}

@@ -1,0 +1,115 @@
+{
+    "profile": {
+        "name": "Antonio Della Porta",
+        "title": "Ph.D. Student",
+        "specialty": "Currently working on Gen AI Agents",
+        "socialLinks": {
+            "linkedin": "https://www.linkedin.com/in/antonio-della-porta-284800198/",
+            "github": "https://github.com/atdepo",
+            "googleScholar": "https://scholar.google.com/citations?hl=en&user=tU51c0cAAAAJ"
+        }
+    },
+    "about": {
+        "paragraphs": [
+            "I am a PhD student in Computer Science at the University of Salerno, working under the supervision of Prof. Fabio Palomba and Dott. Stefano Lambiase. My research focuses on developing a large variety of LLM-based solutions that can be applied in real world Software Engineering tasks.",
+            "My research and development efforts are centered on creating Generative AI-powered agents that serve as versatile, adaptable assistants for software engineers, leveraging open-source technologies to enable transparency and collaborative improvement.",
+            "Through my Master's Degree years I also gained experience working with industry partners on technical projects, gathering insights of the real problems software engineers have in practice."
+        ]
+    },
+    "research": [
+        {
+            "icon": "brain",
+            "title": "Generative AI Agents",
+            "description": "Developing autonomous AI systems that can understand complex instructions and execute sophisticated tasks with minimal human supervision."
+        },
+        {
+            "icon": "terminal",
+            "title": "Prompt Engineering",
+            "description": "Investigating the science of effectively communicating with large language models to improve their performance, reliability, and alignment with human intent."
+        },
+        {
+            "icon": "handshake",
+            "title": "LLMs Integration",
+            "description": "Exploring architectures where multiple LLMs work together as unified systems, combining their strengths to create intelligent and useful solutions."
+        }
+    ],
+    "publications": [
+        {
+            "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
+            "authors": "G. Voria, V, Pentangelo, <b>A. Della Porta</b>, S. Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
+            "journal": "International Conference on Software Maintenance and Evolution (ICSME), 2022",
+            "pdfFile": "cadocs_2022.pdf",
+            "type":"conference"
+        },
+        {
+            "title": "Using large language models to support software engineering documentation in waterfall life cycles: Are we there yet?",
+            "authors": "<b>A. Della Porta</b>, V. De Martino, G. Recupito, C. Iemmino, G. Catolino, D. Di Nucci, F. Palomba",
+            "journal": "4th National Conference on Artificial Intelligence (ITAL-IA), 2024",
+            "pdfFile": "waterfall_2024.pdf",
+            "type":"conference"
+
+        },
+        {
+            "title": "A Novel, Tool-Supported Catalog of Community Smell Symptoms",
+            "authors": "<b>A. Della Porta</b>, S.Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
+            "journal": "Under Submission",
+            "pdfFile": "cs_symptoms.pdf",
+            "type":"journal"
+
+        },
+        {
+            "title": "Unlocking Code Simplicity: The Role of Prompt Patterns in Managing LLM Code Complexity",
+            "authors": "<b>A. Della Porta</b>, G. Recupito, S.Lambiase, D. Di Nucci, F. Palomba",
+            "journal": "Software Quality Assurance For Artificial Intelligence (SQA4AI), 2025",
+            "link": "https://example.com/publication1",
+            "pdfFile": "patterns_complexity.pdf",
+            "type":"conference"
+
+        },
+        {
+            "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
+            "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
+            "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
+            "link": "https://example.com/publication1",
+            "pdfFile": "prompt_patterns_2025.pdf",
+            "type":"conference"
+
+        }
+    ],
+    "cv": {
+        "education": [
+            {
+                "title": "PhD in Computer Science",
+                "institution": "University of Salerno",
+                "period": "Nov.2024 - Present",
+                "description": "Currently enjoying this one\uD83E\uDEE0"
+            },
+            {
+                "title": "Master Degree in Software Engineering and IT Management",
+                "institution": "University of Salerno",
+                "period": "Oct.2021 - Sept.2023",
+                "description": "<b>Thesis: \"A Novel, Tool-Supported Inspection Procedure to Diagnose Community Smells through the Analysis of Dominant Behaviors\"</b>"
+            },
+            {
+                "title": "Bachelor Degree in Computer Science",
+                "institution": "University of Salerno",
+                "period": "2018 - 2021",
+                "description": "<b>Thesis: \"Quantum Computing: Funzionamento e Applicazioni Di Un Modello Di Computazione Non Deterministico\"</b>"
+            }
+        ],
+        "research_experience": [
+            {
+                "title": "Sofwtare Engineer",
+                "institution": "Minsait",
+                "period": "Jun.2021 - Dec.2023",
+                "description": "Throughout these years, I have built a solid foundation in Information and Communication Technology (ICT), specializing in smart metering solutions."
+            },
+            {
+                "title": "Research Assistant",
+                "institution": "University of Salerno",
+                "period": "Jan.2024 - Oct.2024",
+                "description": "Worked on the project QualAI - Continuous Quality Assurance for AI Systems"
+            }
+        ]
+    }
+}

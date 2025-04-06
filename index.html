@@ -3,103 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonio Della Porta</title>
-    <meta name="description" content="Portfolio website of Dr. Antonio Della Porta, AI Researcher & Software Engineer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Antonio Della Porta | Ph.D. Student</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/cv.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/publications.css">
+    <link rel="stylesheet" href="css/research.css">
+    <link rel="stylesheet" href="css/utils.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap">
+    <script src="script.js" defer></script>
 </head>
-<body class="bg-gray-100">
-<header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
-    <nav class="container mx-auto px-6 py-3">
-        <ul class="flex justify-center space-x-6">
-            <li><a href="#home" class="text-gray-800 hover:text-primary transition duration-300">Home</a></li>
-            <li><a href="#publications" class="text-gray-800 hover:text-primary transition duration-300">Publications</a></li>
-            <li><a href="#conferences" class="text-gray-800 hover:text-primary transition duration-300">Conferences</a></li>
-            <li><a href="#experience" class="text-gray-800 hover:text-primary transition duration-300">Experience</a></li>
-        </ul>
-    </nav>
-</header>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#cv">CV</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<main>
-    <section id="home" class="bg-pattern-1 text-white min-h-screen flex flex-col justify-center">
-        <div class="container mx-auto px-6 py-20">
-            <div class="flex flex-col lg:flex-row items-center mb-12">
-                <div class="lg:w-1/3 mb-10 lg:mb-0">
-                    <div class="photo-container mx-auto">
-                        <img id="profile-photo" src="photo.jpg" alt="Researcher's photo" class="w-full h-full object-cover transition duration-300 transform hover:scale-105 profile-photo" />
+    <!-- Compact Merged Hero and About Section with Relocated Info Boxes -->
+    <section id="home" class="hero-about">
+        <div class="container hero-about-container">
+            <!-- Single Card Layout -->
+            <div class="hero-card">
+                <!-- Left Column: Profile Image and Info Boxes -->
+                <div class="profile-column">
+                    <div class="profile-image">
+                        <img src="photo.jpg" alt="Antonio Della Porta">
+                    </div>
+
+                    <!-- Info Grid - Now inside the left column -->
+                    <div class="profile-info">
+                        <!-- Research Interests -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Research</h4>
+                                <p>Gen-AI Agents & SE4AI</p>
+                            </div>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Education</h4>
+                                <p>Master Degree in CS</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>adellaporta@unisa.it</p>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Location</h4>
+                                <p>University of Salerno</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="lg:w-2/3 lg:pl-12">
-                    <h1 id="researcher-name" class="text-5xl font-bold mb-4">Dr. Antonio Della Porta</h1>
-                    <p id="researcher-title" class="text-2xl mb-6">AI Researcher & Software Engineer</p>
-                    <div id="short-bio" class="text-lg mb-6">
-                        <!-- A short, impactful bio sentence will go here -->
+
+                <!-- Right Column: Text Content -->
+                <div class="profile-content">
+                    <!-- Header Area -->
+                    <div class="profile-header">
+                        <h1 class="hero-name">Antonio Della Porta</h1>
+                        <p class="hero-title">Ph.D. Student in Computer Science</p>
+                        <p class="hero-specialty">Currently working on Gen AI Agents</p>
+
+                        <!-- Social Icons -->
+                        <div class="social-icons">
+                            <a href="https://github.com/atdepo" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/antonio-della-porta-284800198/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://scholar.google.com/citations?hl=en&user=tU51c0cAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
                     </div>
-                    <a href="#full-bio" class="bg-white text-primary font-bold py-2 px-4 rounded hover:bg-gray-100 transition duration-300">Read Full Bio</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="scroll-indicator">
-        <span class="arrow"></span>
-    </div>
-    <section id="full-bio" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-8 text-primary">About Me</h2>
-            <div id="about-content" class="text-lg text-gray-700 space-y-4">
-                <!-- Full bio content will be inserted here -->
-            </div>
-        </div>
-    </section>
 
-    <section id="publications" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center text-primary">Publications</h2>
-            <div class="publications-scroll-container">
-                <div id="publications-container" class="flex space-x-6 overflow-x-auto pb-6">
-                    <!-- Publication cards will be dynamically inserted here -->
+                    <!-- Bio Section -->
+                    <div class="about-bio">
+                        <p>I am a <span class="about-highlight">PhD candidate in Computer Science</span> at the University of Research, working under the supervision of Professor Academic. My research focuses on developing novel machine learning algorithms for solving complex real-world problems.</p>
+
+                        <p>With a background in both theoretical computer science and practical applications, I aim to bridge the gap between cutting-edge research and impactful implementations. My work has been published in top-tier conferences and journals in the field.</p>
+
+                        <p>Prior to my PhD, I worked as a research assistant at the Institute for Advanced Technology, where I contributed to several projects in the areas of computer vision and natural language processing.</p>
+                    </div>
+
+                    <!-- CV Download button -->
+                    <div class="cv-download-container">
+                        <a href="assets/cv.pdf" download class="cv-download-btn">
+                            <i class="fas fa-file-download"></i> Download CV (PDF)
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="conferences" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center text-primary">Conferences Attended</h2>
-            <div class="conferences-scroll-container">
-                <div id="conferences-container" class="flex space-x-6 overflow-x-auto pb-6">
-                    <!-- Conference cards will be dynamically inserted here -->
+    <!-- Research Section -->
+    <section id="research" class="section research">
+        <div class="container">
+            <h2 class="section-title">Research Areas</h2>
+            <div class="research-grid">
+                <!-- Research items will be dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+        <!-- Publications Section -->
+    <section id="publications" class="section publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="section cv">
+        <div class="container">
+            <h2 class="section-title">Curriculum Vitae</h2>
+            <div class="cv-grid">
+                <div class="cv-column">
+                    <div class="cv-section education">
+                        <h3>Education</h3>
+                        <!-- Education items will be dynamically populated -->
+                    </div>
+                    <div class="cv-section research-experience">
+                        <h3>Job & Research Experience</h3>
+                        <!-- Research experience items will be dynamically populated -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center text-primary">Experience Timeline</h2>
-            <div class="relative wrap overflow-hidden p-10 h-full">
-                <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
-                <div id="timeline-content">
-                    <!-- Timeline items will be dynamically inserted here -->
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p></p>
         </div>
-    </section>
-</main>
-
-<footer class="bg-primary text-white py-6">
-    <div class="container mx-auto px-6 text-center">
-        <p>&copy; 2024 Antonio Della Porta. All rights reserved.</p>
-    </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="script.js"></script>
+    </footer>
 </body>
 </html>

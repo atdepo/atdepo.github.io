@@ -1,222 +1,350 @@
-// Initialize AOS (Animate on Scroll)
-AOS.init({
-    duration: 1000,
-    once: true
-});
+// Publications Module
 
-// Scroll-based background animation
-const bgPattern = document.querySelector('.bg-pattern-1');
-let lastScrollY = window.scrollY;
+function createPublicationControls() {
+    const controlsContainer = document.createElement('div');
+    controlsContainer.className = 'publications-controls';
 
-function updateBackgroundPosition() {
-    const currentScrollY = window.scrollY;
-    const scrollDiff = currentScrollY - lastScrollY;
-    const currentPosition = getComputedStyle(bgPattern).backgroundPosition.split(' ').map(parseFloat);
+    const filterContainer = document.createElement('div');
+    filterContainer.className = 'publications-filter';
 
-    const newX = (currentPosition[0] + scrollDiff * 0.1) % 100;
-    const newY = (currentPosition[1] + scrollDiff * 0.1) % 100;
+    // Create fixed filter buttons
+    const buttons = [
+        { text: 'All', filter: 'all' },
+        { text: 'Journals', filter: 'journal' },
+        { text: 'Conferences', filter: 'conference' }
+    ];
 
-    bgPattern.style.backgroundPosition = `${newX}% ${newY}%`;
-    lastScrollY = currentScrollY;
+    buttons.forEach(btn => {
+        const button = document.createElement('button');
+        button.className = 'publications-filter-btn';
+        button.classList.toggle('active', btn.filter === 'all');
+        button.dataset.filter = btn.filter;
+        button.textContent = btn.text;
+        filterContainer.appendChild(button);
+    });
+
+    controlsContainer.appendChild(filterContainer);
+    return controlsContainer;
 }
 
-window.addEventListener('scroll', () => {
-    window.requestAnimationFrame(updateBackgroundPosition);
-});
+function createPublicationItem(pub) {
+    const publicationItem = document.createElement('div');
+    publicationItem.className = 'publication-item';
 
-// Scroll indicator functionality
-document.querySelector('.scroll-indicator').addEventListener('click', function() {
-    const nextSection = document.querySelector('#home + section');
-    if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
-});
+    // Use explicit type from JSON
+    const publicationType = pub.type || 'unknown';
+    publicationItem.dataset.type = publicationType;
 
-// Function to fetch publication data and generate cards
-async function loadPublications() {
-    try {
-        const response = await fetch('publications.json');
-        const data = await response.json();
-        const publicationsContainer = document.getElementById('publications-container');
-
-        for (const pub of data.publications) {
-            const card = await createPublicationCard(pub);
-            publicationsContainer.appendChild(card);
-        }
-    } catch (error) {
-        console.error('Error loading publications:', error);
-    }
-}
-
-function highlightAuthor(authors, highlightName) {
-    return authors.map(author =>
-        author.includes(highlightName)
-            ? `<span class="font-semibold text-primary">${author}</span>`
-            : author
-    ).join(', ');
-}
-
-// Function to create a publication card
-async function createPublicationCard(publication) {
-    const card = document.createElement('div');
-    card.className = 'bg-white rounded-lg shadow-lg overflow-hidden flex flex-col min-w-[350px] max-w-[350px]';
-
-    const preview = await renderPDFPreview(publication.pdfFile);
-
-    card.innerHTML = `
-        <div class="relative flex-grow" style="height: 300px;">
-            ${preview}
-            <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
-                <a href="/papers/${publication.pdfFile}" download class="bg-white text-primary font-semibold py-2 px-4 rounded hover:bg-primary hover:text-white transition-colors duration-300">
-                    Download PDF
-                </a>
+    publicationItem.innerHTML = `
+        <div class="publication-content">
+            <div class="publication-header">
+                <div class="publication-title">${pub.title}</div>
+                <div class="publication-authors">${pub.authors}</div>
             </div>
-        </div>
-        <div class="p-4 flex flex-col justify-between flex-grow">
-            <div>
-                <h3 class="text-lg font-semibold mb-2">${publication.title}</h3>
-                <p class="text-sm text-gray-600 mb-2">${highlightAuthor(publication.authors, 'Your Name')}</p>
-            </div>
-            <div class="flex flex-wrap gap-2 mt-2">
-                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">${publication.year}</span>
-                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">${publication.venue}</span>
-                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">${publication.type}</span>
+            <div class="publication-details">
+                <div class="publication-journal-container">
+                    <div class="publication-journal">${pub.journal}</div>
+                    <div class="publication-type-tag ${publicationType}">${publicationType}</div>
+                </div>
+                <div class="publication-links">
+                    <a href="assets/papers/${pub.pdfFile}" target="_blank" class="publication-link paper-link">
+                        View Paper <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="assets/papers/${pub.pdfFile}" download="${pub.title}" class="publication-link pdf-link">
+                        Download PDF <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
             </div>
         </div>
     `;
 
-    return card;
+    return publicationItem;
+}
+function setupPublicationFilters(publicationList) {
+    const filterButtons = document.querySelectorAll('.publications-filter-btn');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Get the filter type
+            const filterType = button.dataset.filter;
+
+            // Filter publications
+            filterPublications(publicationList, filterType);
+        });
+    });
 }
 
+function filterPublications(publicationList, filterType) {
+    const publicationItems = publicationList.querySelectorAll('.publication-item');
 
-// Function to render PDF previewf
-async function renderPDFPreview(pdfFile) {
-    try {
-        const loadingTask = pdfjsLib.getDocument(`/papers/${pdfFile}`);
-        const pdf = await loadingTask.promise;
-        const page = await pdf.getPage(1);
+    publicationItems.forEach(item => {
+        // If 'all' is selected, show all items
+        if (filterType === 'all') {
+            item.classList.remove('hidden');
+            return;
+        }
 
-        const scale = 2; // Increased scale for better resolution
-        const viewport = page.getViewport({ scale });
+        // Check if item type matches filter type
+        const isVisible = item.dataset.type === filterType;
 
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+        // Toggle visibility
+        item.classList.toggle('hidden', !isVisible);
+    });
+}
 
-        const renderContext = {
-            canvasContext: context,
-            viewport: viewport,
-            renderInteractiveForms: false,
-            background: 'rgba(255,255,255,1)', // Ensure white background
-            enableWebGL: true // Enable WebGL for better performance if available
-        };
+function loadPublicationsSection(publicationsData) {
+    const publicationsContainer = document.querySelector('.publications .container');
 
-        await page.render(renderContext).promise;
-
-        return `<img src="${canvas.toDataURL('image/jpeg', 0.8)}" alt="PDF Preview" class="w-full h-full object-contain">`;
-    } catch (error) {
-        console.error('Error rendering PDF preview:', error);
-        return '<div class="w-full h-full flex items-center justify-center bg-gray-200">Preview unavailable</div>';
+    // Check if section title exists, if not create it
+    let sectionTitle = publicationsContainer.querySelector('.section-title');
+    if (!sectionTitle) {
+        sectionTitle = document.createElement('h2');
+        sectionTitle.className = 'section-title';
+        sectionTitle.textContent = 'Publications';
+        publicationsContainer.appendChild(sectionTitle);
     }
+
+    // Clear existing content but keep the title
+    const currentContent = Array.from(publicationsContainer.childNodes);
+    currentContent.forEach(node => {
+        if (node !== sectionTitle) {
+            publicationsContainer.removeChild(node);
+        }
+    });
+
+    // Create and add controls
+    const controlsContainer = createPublicationControls();
+    publicationsContainer.appendChild(controlsContainer);
+
+    // Create publication list
+    const publicationList = document.createElement('div');
+    publicationList.className = 'publication-list';
+
+    // Create and add publication items
+    publicationsData.forEach(pub => {
+        const publicationItem = createPublicationItem(pub);
+        publicationList.appendChild(publicationItem);
+    });
+
+    // Add publication list to container
+    publicationsContainer.appendChild(publicationList);
+
+    // Setup filters
+    setupPublicationFilters(publicationList);
 }
-// Function to fetch JSON data
-async function fetchData() {
-    try {
-        const response = await fetch('data.json');
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching data:', error);
+
+// Update CV Section Rendering
+function renderCVSection(cvData, sectionElement, isSectionEducation = true) {
+    // Check if the section exists
+    if (!sectionElement) {
+        console.error('CV section element not found');
+        return;
     }
-}
 
-// Function to render publications
-async function renderPublications(publications) {
-    const publicationsContainer = document.getElementById('publications-container');
-    for (const pub of publications) {
-        const card = await createPublicationCard(pub);
-        publicationsContainer.appendChild(card);
+    // Clear existing items except the title
+    let title = sectionElement.querySelector('h3');
+    if (!title) {
+        title = document.createElement('h3');
+        title.textContent = isSectionEducation ? 'Education' : 'Research Experience';
+        sectionElement.appendChild(title);
     }
+
+    const currentContent = Array.from(sectionElement.childNodes);
+    currentContent.forEach(node => {
+        if (node !== title) {
+            sectionElement.removeChild(node);
+        }
+    });
+
+    // Add new items - without type tags
+    cvData.forEach(item => {
+        const cvItem = document.createElement('div');
+        cvItem.className = 'cv-item';
+
+        cvItem.innerHTML = `
+            <div class="cv-item-title">${item.title}</div>
+            <div class="cv-item-subtitle">${item.institution || ''}</div>
+            <div class="cv-item-date">${item.period || ''}</div>
+            <p>${item.description || ''}</p>
+        `;
+
+        sectionElement.appendChild(cvItem);
+    });
 }
+// Dynamic Content Loader
+document.addEventListener('DOMContentLoaded', () => {
+    // Create overlay for mobile menu
+    const body = document.body;
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    body.appendChild(overlay);
 
-// Function to render conferences
-function renderConferences(conferences) {
-    const conferencesContainer = document.getElementById('conferences-container');
-    conferencesContainer.innerHTML = conferences.map((conf, index) => `
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col min-w-[300px] max-w-[300px]" data-aos="fade-up" data-aos-delay="${index * 100}">
-            <div class="relative h-48">
-                <img src="${conf.venueImage}" alt="${conf.name} Venue" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                    <h3 class="text-white text-xl font-semibold text-center px-4">${conf.name}</h3>
-                </div>
-            </div>
-            <div class="p-4 flex flex-col justify-between flex-grow">
-                <div>
-                    <p class="text-gray-600 mb-2">${conf.location}</p>
-                    <p class="text-gray-500">${conf.date}</p>
-                </div>
-                ${conf.presentation ? `
-                <div class="mt-4">
-                    <p class="text-sm font-semibold">Presentation:</p>
-                    <p class="text-sm text-gray-600">${conf.presentation}</p>
-                </div>
-                ` : ''}
-                ${conf.link ? `
-                <div class="mt-4">
-                    <a href="${conf.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition duration-300">
-                        More Info
-                    </a>
-                </div>
-                ` : ''}
-            </div>
-        </div>
-    `).join('');
-}
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-function renderExperience(experiences) {
-    const timelineContent = document.getElementById('timeline-content');
-    timelineContent.innerHTML = experiences.map((exp, index) => `
-        <div class="mb-8 flex justify-between ${index % 2 === 0 ? 'flex-row-reverse' : 'items-center'} w-full left-timeline">
-            <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
-                <h1 class="mx-auto font-semibold text-lg text-white">${index + 1}</h1>
-            </div>
-            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4" data-aos="${index % 2 === 0 ? 'fade-left' : 'fade-right'}">
-                <h3 class="mb-3 font-bold text-gray-800 text-xl">${exp.title}</h3>
-                <h4 class="mb-3 font-semibold text-primary text-md">${exp.company}</h4>
-                <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">${exp.description}</p>
-                <p class="mt-3 text-sm text-gray-600">${exp.startDate} - ${exp.endDate}</p>
-            </div>
-        </div>
-    `).join('');
-}
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
 
-// Main function to load and render all content
-async function initializeContent() {
-    const data = await fetchData();
-    if (data) {
-        renderHome(data.home);
-        renderFullBio(data.home);
-        renderConferences(data.conferences);
-        renderExperience(data.experience);
+    // Close mobile menu when clicking on overlay
+    overlay.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        body.style.overflow = '';
+    });
 
-    }
-    await loadPublications();
-}
+    // Close mobile menu when clicking on a nav link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            body.style.overflow = '';
+        });
+    });
 
-// Function to render home section
-function renderHome(data) {
-    document.getElementById('researcher-name').textContent = data.name;
-    document.getElementById('researcher-title').textContent = data.title;
-    document.getElementById('short-bio').textContent = data.shortBio;
-    document.getElementById('profile-photo').src = data.photoUrl;
-}
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
 
-// Function to render full bio
-function renderFullBio(data) {
-    const aboutContent = document.getElementById('about-content');
-    aboutContent.innerHTML = data.fullBio.map(paragraph => `<p>${paragraph}</p>`).join('');
-}
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
 
-// Call the main function when the DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeContent);
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Animation for mobile menu items
+    document.querySelectorAll('.nav-links li').forEach((item, index) => {
+        item.style.setProperty('--i', index);
+    });
+
+    // Active navigation highlighting
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            if (window.pageYOffset >= sectionTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Fetch the dynamic content JSON
+    fetch('dynamic-content.json')
+        .then(response => response.json())
+        .then(data => {
+            // Load Profile Section
+            const headerLogo = document.querySelector('.logo');
+            const heroName = document.querySelector('.hero-name');
+            const heroTitle = document.querySelector('.hero-title');
+            const heroSpecialty = document.querySelector('.hero-specialty');
+            const socialIcons = document.querySelectorAll('.social-icons a');
+            const socialKeys = ['github', 'linkedin', 'googleScholar'];
+
+            if (headerLogo) headerLogo.textContent = data.profile.name;
+            if (heroName) heroName.textContent = data.profile.name;
+            if (heroTitle) heroTitle.textContent = data.profile.title;
+            if (heroSpecialty) heroSpecialty.textContent = data.profile.specialty;
+
+            socialIcons.forEach((icon, index) => {
+                if (socialKeys[index]) {
+                    icon.href = data.profile.socialLinks[socialKeys[index]];
+                }
+            });
+
+            // Load Bio Section
+            const aboutBio = document.querySelector('.about-bio');
+            if (aboutBio) {
+                aboutBio.innerHTML = '';
+                data.about.paragraphs.forEach(paragraph => {
+                    const p = document.createElement('p');
+                    p.textContent = paragraph;
+                    aboutBio.appendChild(p);
+                });
+            }
+
+            // Load Research Section
+            const researchGrid = document.querySelector('.research-grid');
+            if (researchGrid) {
+                researchGrid.innerHTML = '';
+                data.research.forEach(research => {
+                    const researchItem = document.createElement('div');
+                    researchItem.className = 'research-item';
+
+                    researchItem.innerHTML = `
+                        <div class="research-icon">
+                            <i class="fas fa-${research.icon}"></i>
+                        </div>
+                        <div class="research-content">
+                            <h3>${research.title}</h3>
+                            <p>${research.description}</p>
+                        </div>
+                    `;
+
+                    researchGrid.appendChild(researchItem);
+                });
+            }
+
+            // Load Publications Section
+            loadPublicationsSection(data.publications);
+
+            // Load CV Section
+            const educationSection = document.querySelector('.education');
+            const researchExpSection = document.querySelector('.research-experience');
+
+            // Render Education Section
+            renderCVSection(data.cv.education, educationSection, true);
+
+            // Render Research Experience Section
+            renderCVSection(data.cv.research_experience, researchExpSection, false);
+
+            // Update Footer
+            const footer = document.querySelector('.footer .container p');
+            if (footer) {
+                footer.textContent = `© ${new Date().getFullYear()} ${data.profile.name}. All Rights Reserved.`;
+            }
+        })
+        .catch(error => console.error('Error loading dynamic content:', error));
+});
