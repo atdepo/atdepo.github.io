@@ -35,26 +35,12 @@
     ],
     "publications": [
         {
-            "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
-            "authors": "G. Voria, V, Pentangelo, <b>A. Della Porta</b>, S. Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
-            "journal": "International Conference on Software Maintenance and Evolution (ICSME), 2022",
-            "pdfFile": "cadocs_2022.pdf",
+            "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
+            "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
+            "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
+            "link": "https://example.com/publication1",
+            "pdfFile": "prompt_patterns_2025.pdf",
             "type":"conference"
-        },
-        {
-            "title": "Using large language models to support software engineering documentation in waterfall life cycles: Are we there yet?",
-            "authors": "<b>A. Della Porta</b>, V. De Martino, G. Recupito, C. Iemmino, G. Catolino, D. Di Nucci, F. Palomba",
-            "journal": "4th National Conference on Artificial Intelligence (ITAL-IA), 2024",
-            "pdfFile": "waterfall_2024.pdf",
-            "type":"conference"
-
-        },
-        {
-            "title": "A Novel, Tool-Supported Catalog of Community Smell Symptoms",
-            "authors": "<b>A. Della Porta</b>, S.Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
-            "journal": "Under Submission",
-            "pdfFile": "cs_symptoms.pdf",
-            "type":"journal"
 
         },
         {
@@ -67,13 +53,27 @@
 
         },
         {
-            "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
-            "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
-            "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
-            "link": "https://example.com/publication1",
-            "pdfFile": "prompt_patterns_2025.pdf",
+            "title": "A Novel, Tool-Supported Catalog of Community Smell Symptoms",
+            "authors": "<b>A. Della Porta</b>, S.Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
+            "journal": "Under Submission",
+            "pdfFile": "cs_symptoms.pdf",
+            "type":"journal"
+
+        },
+        {
+            "title": "Using large language models to support software engineering documentation in waterfall life cycles: Are we there yet?",
+            "authors": "<b>A. Della Porta</b>, V. De Martino, G. Recupito, C. Iemmino, G. Catolino, D. Di Nucci, F. Palomba",
+            "journal": "4th National Conference on Artificial Intelligence (ITAL-IA), 2024",
+            "pdfFile": "waterfall_2024.pdf",
             "type":"conference"
 
+        },
+        {
+            "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
+            "authors": "G. Voria, V, Pentangelo, <b>A. Della Porta</b>, S. Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
+            "journal": "International Conference on Software Maintenance and Evolution (ICSME), 2022",
+            "pdfFile": "cadocs_2022.pdf",
+            "type":"conference"
         }
     ],
     "cv": {
@@ -88,28 +88,29 @@
                 "title": "Master Degree in Software Engineering and IT Management",
                 "institution": "University of Salerno",
                 "period": "Oct.2021 - Sept.2023",
-                "description": "<b>Thesis: \"A Novel, Tool-Supported Inspection Procedure to Diagnose Community Smells through the Analysis of Dominant Behaviors\"</b>"
+                "description": "<b>Thesis: \"A Novel, Tool-Supported Inspection Procedure to Diagnose Community Smells through the Analysis of Dominant Behaviors\"<br>Final Mark: 110/110 cum laude</b>"
             },
             {
                 "title": "Bachelor Degree in Computer Science",
                 "institution": "University of Salerno",
                 "period": "2018 - 2021",
-                "description": "<b>Thesis: \"Quantum Computing: Funzionamento e Applicazioni Di Un Modello Di Computazione Non Deterministico\"</b>"
+                "description": "<b>Thesis: \"Quantum Computing: Funzionamento e Applicazioni Di Un Modello Di Computazione Non Deterministico\"<br>Final Mark: 110/110 cum laude</b>"
             }
         ],
         "research_experience": [
-            {
-                "title": "Sofwtare Engineer",
-                "institution": "Minsait",
-                "period": "Jun.2021 - Dec.2023",
-                "description": "Throughout these years, I have built a solid foundation in Information and Communication Technology (ICT), specializing in smart metering solutions."
-            },
             {
                 "title": "Research Assistant",
                 "institution": "University of Salerno",
                 "period": "Jan.2024 - Oct.2024",
                 "description": "Worked on the project QualAI - Continuous Quality Assurance for AI Systems"
+            },
+            {
+                "title": "Sofwtare Engineer",
+                "institution": "Minsait",
+                "period": "Jun.2021 - Dec.2023",
+                "description": "Throughout these years I have strengthen my abilities in software engineering, specializing in smart metering solutions that requires high-speed and efficient solutions."
             }
+
         ]
     }
 }
