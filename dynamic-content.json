@@ -18,7 +18,7 @@
     },
     "research": [
         {
-            "icon": "brain",
+            "icon": "handshake",
             "title": "Generative AI Agents",
             "description": "Developing autonomous AI systems that can understand complex instructions and execute sophisticated tasks with minimal human supervision."
         },
@@ -28,18 +28,49 @@
             "description": "Investigating the science of effectively communicating with large language models to improve their performance, reliability, and alignment with human intent."
         },
         {
-            "icon": "handshake",
-            "title": "LLMs Integration",
+            "icon": "brain",
+            "title": "Cognitive Theories in LLMs",
             "description": "Exploring architectures where multiple LLMs work together as unified systems, combining their strengths to create intelligent and useful solutions."
         }
     ],
     "publications": [
+
+        {
+          "title": "Teaching Software Engineering for Artificial Intelligence: An Experience Report",
+          "authors": "F. Palomba, G. Voria, A. Parziale, V. Pentangelo, <b>A. Della Porta</b>, V. De Martino, G. Recupito, G. Giordano",
+          "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
+          "pdfFile": "C8.pdf",
+          "type":"conference"
+
+        },
+        {
+          "title": "An Evidence-Based Study on the Relationship of Software Engineering Practices on Code Smells in Python ML Projects",
+          "authors": "G. Giordano, <b>A. Della Porta</b>, F. Ferrucci, F. Palomba",
+          "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
+          "pdfFile": "C7.pdf",
+          "type":"conference"
+
+        },
+        {
+          "title": "Transparent Machine Learning for Type 1 Diabetes Diagnosis from Gene Expression Data",
+          "authors": "R. Carotenuto, V. Pentangelo, <b>A. Della Porta</b>, F. Palomba",
+          "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
+          "pdfFile": "C6.pdf",
+          "type":"conference"
+
+        },
+        {
+          "title": "From Rules to Reports: Enhancing Diabetes Prediction Interpretability with Anchor and LLMs",
+          "authors": "F. Festa, <b>A. Della Porta</b>, V. Pentangelo, F. Palomba",
+          "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
+          "pdfFile": "C5.pdf",
+          "type":"conference"
+        },
         {
             "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
             "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
             "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
-            "link": "https://example.com/publication1",
-            "pdfFile": "prompt_patterns_2025.pdf",
+            "pdfFile": "C4.pdf",
             "type":"conference"
 
         },
@@ -47,16 +78,15 @@
             "title": "Unlocking Code Simplicity: The Role of Prompt Patterns in Managing LLM Code Complexity",
             "authors": "<b>A. Della Porta</b>, G. Recupito, S.Lambiase, D. Di Nucci, F. Palomba",
             "journal": "Software Quality Assurance For Artificial Intelligence (SQA4AI), 2025",
-            "link": "https://example.com/publication1",
-            "pdfFile": "patterns_complexity.pdf",
+            "pdfFile": "C3.pdf",
             "type":"conference"
 
         },
         {
             "title": "A Novel, Tool-Supported Catalog of Community Smell Symptoms",
             "authors": "<b>A. Della Porta</b>, S.Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
-            "journal": "Under Submission",
-            "pdfFile": "cs_symptoms.pdf",
+            "journal": "Journal of Software Evolution and Process",
+            "pdfFile": "J1.pdf",
             "type":"journal"
 
         },
@@ -64,7 +94,7 @@
             "title": "Using large language models to support software engineering documentation in waterfall life cycles: Are we there yet?",
             "authors": "<b>A. Della Porta</b>, V. De Martino, G. Recupito, C. Iemmino, G. Catolino, D. Di Nucci, F. Palomba",
             "journal": "4th National Conference on Artificial Intelligence (ITAL-IA), 2024",
-            "pdfFile": "waterfall_2024.pdf",
+            "pdfFile": "C2.pdf",
             "type":"conference"
 
         },
@@ -72,7 +102,7 @@
             "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
             "authors": "G. Voria, V, Pentangelo, <b>A. Della Porta</b>, S. Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
             "journal": "International Conference on Software Maintenance and Evolution (ICSME), 2022",
-            "pdfFile": "cadocs_2022.pdf",
+            "pdfFile": "C1.pdf",
             "type":"conference"
         }
     ],

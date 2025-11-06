@@ -13,40 +13,6 @@
     "I'm passionate about pushing the boundaries of software engineering and AI, with a particular interest in innovative technologies, data management, and improving both AI systems and developer communities\uD83D\uDD2E\uD83D\uDCA1. I'm always excited to take on new challenges and contribute to the ever-evolving fields of Computer Science and Artificial Intelligence\uD83C\uDF1F."
     ]
   },
-  "conferences": [
-    {
-      "name": "WAILS",
-      "location": "Salerno, Italy",
-      "date": "January 18-19, 2024",
-      "venueImage": "./venues/wails.jpg",
-      "presentation": "1st Workshop on Artificial Intelligence and Learning Sciences",
-      "link": "https://wails2024.github.io"
-    },
-    {
-      "name": "ITAL-IA",
-      "location": "Naples, Italy",
-      "date": "May 30, 2024",
-      "venueImage": "/venues/italia.jpg",
-      "presentation": "4th National Conference on Artificial Intelligence",
-      "link": "https://www.ital-ia2024.it"
-    },
-    {
-      "name": "QUAL-ITA",
-      "location": "Venice, Italy",
-      "date": "June 13, 2024",
-      "venueImage": "/venues/qualita.jpg",
-      "presentation": "3rd Conference on System and Service Quality",
-      "link": "https://qualitawg.github.io"
-    },
-    {
-      "name": "EASE",
-      "location": "Salerno, Italy",
-      "date": "June 18, 2024",
-      "venueImage": "/venues/wails.jpg",
-      "presentation": "International Conference on Evaluation and Assessment in Software Engineering (EASE)",
-      "link": "https://conf.researchr.org/home/ease-2024"
-    }
-  ],
   "experience": [
     {
       "title": "Bachelor Degree in Computer Science",
