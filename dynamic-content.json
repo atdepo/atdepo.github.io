@@ -30,17 +30,37 @@
         {
             "icon": "brain",
             "title": "Cognitive Theories in LLMs",
-            "description": "Exploring architectures where multiple LLMs work together as unified systems, combining their strengths to create intelligent and useful solutions."
+            "description": "Cognitive theories provide a lens to interpret how large language models process context, reason, and structure their outputs."
         }
     ],
     "publications": [
-
+        {
+          "title": "Rebuilding AI from the Small: The Path Toward Democratized Intelligence",
+          "authors": "<b>A. Della Porta</b>",
+          "journal": "48th International Conference on Software Engineering, Doctoral Symposium Track (ICSE), 2026",
+          "pdfFile": "C11.pdf",
+          "type": "conference"
+        },
+        {
+          "title": "Ask, Then Think: Enhancing LLM Performance with Socratic Reasoning",
+          "authors": "<b>A. Della Porta</b>, J. Richards, L. Cammarota, S. Lambiase, F. Palomba, ",
+          "journal": "23rd International Mining Software Repositories Conference, Registered Report Track (MSR), 2026",
+          "pdfFile": "C10.pdf",
+          "type": "conference"
+        },
+        {
+          "title": "Toward Measuring Prompt Quality: A Preliminary Investigation on Prompt Smells",
+          "authors": "<b>A. Della Porta</b>, G. Voria, A. Abbate, R. Sulipano, S. Lambiase, G. Catolino, F. Palomba,",
+          "journal": "3rd Workshop on Software Quality Assurance for AI (SQA4AI), 2026",
+          "pdfFile": "C9.pdf",
+          "type": "conference"
+        },
         {
           "title": "Teaching Software Engineering for Artificial Intelligence: An Experience Report",
           "authors": "F. Palomba, G. Voria, A. Parziale, V. Pentangelo, <b>A. Della Porta</b>, V. De Martino, G. Recupito, G. Giordano",
           "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
           "pdfFile": "C8.pdf",
-          "type":"conference"
+          "type": "conference"
 
         },
         {
@@ -48,7 +68,7 @@
           "authors": "G. Giordano, <b>A. Della Porta</b>, F. Ferrucci, F. Palomba",
           "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
           "pdfFile": "C7.pdf",
-          "type":"conference"
+          "type": "conference"
 
         },
         {
@@ -56,7 +76,7 @@
           "authors": "R. Carotenuto, V. Pentangelo, <b>A. Della Porta</b>, F. Palomba",
           "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
           "pdfFile": "C6.pdf",
-          "type":"conference"
+          "type": "conference"
 
         },
         {
@@ -64,14 +84,14 @@
           "authors": "F. Festa, <b>A. Della Porta</b>, V. Pentangelo, F. Palomba",
           "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
           "pdfFile": "C5.pdf",
-          "type":"conference"
+          "type": "conference"
         },
         {
             "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
             "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
             "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
             "pdfFile": "C4.pdf",
-            "type":"conference"
+            "type": "conference"
 
         },
         {
@@ -79,7 +99,7 @@
             "authors": "<b>A. Della Porta</b>, G. Recupito, S.Lambiase, D. Di Nucci, F. Palomba",
             "journal": "Software Quality Assurance For Artificial Intelligence (SQA4AI), 2025",
             "pdfFile": "C3.pdf",
-            "type":"conference"
+            "type": "conference"
 
         },
         {
