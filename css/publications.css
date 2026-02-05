@@ -87,6 +87,10 @@
     border-left-color: #E34D9E;
 }
 
+.publication-item[data-type="doctoral symposium"] {
+    border-left-color: #E34D9E;
+}
+
 .publication-content {
     padding: 1.5rem;
     position: relative;
@@ -155,6 +159,42 @@
     background-color: rgba(227, 77, 158, 0.1);
     color: #E34D9E;
     border: 1px solid rgba(227, 77, 158, 0.3);
+}
+
+.publication-type-tag.ds {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: #2196F3;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.publication-type-tag.rr {
+    background-color: rgba(77, 109, 227, 0.1);
+    color: #4D6DE3;
+    border: 1px solid rgba(77, 109, 227, 0.3);
+}
+
+.publication-type-tag.rt {
+    background-color: rgba(0, 150, 136, 0.1);
+    color: #009688;
+    border: 1px solid rgba(0, 150, 136, 0.3);
+}
+
+.publication-type-tag.mt {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #FF9800;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.publication-type-tag.rd {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.publication-type-tag.td {
+    background-color: rgba(121, 85, 72, 0.1);
+    color: #795548;
+    border: 1px solid rgba(121, 85, 72, 0.3);
 }
 
 .publication-links {

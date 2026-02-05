@@ -27,12 +27,21 @@ function createPublicationControls() {
     return controlsContainer;
 }
 
-function createPublicationItem(pub) {
+function createPublicationItem(pub, tracks) {
     const publicationItem = document.createElement('div');
     publicationItem.className = 'publication-item';
 
     // Use explicit type from JSON
     const publicationType = pub.type || 'unknown';
+    let publicationTrack = 'unknown';
+    let publicationAcronym = 'unknown';
+    if (Array.isArray(tracks) && pub.track) {
+        const matchedTrack = tracks.find(t => t.acronym === pub.track);
+        if (matchedTrack) {
+            publicationAcronym = matchedTrack.acronym;
+            publicationTrack = matchedTrack.full_name;
+        }
+    }
     publicationItem.dataset.type = publicationType;
 
     publicationItem.innerHTML = `
@@ -44,7 +53,10 @@ function createPublicationItem(pub) {
             <div class="publication-details">
                 <div class="publication-journal-container">
                     <div class="publication-journal">${pub.journal}</div>
-                    <div class="publication-type-tag ${publicationType}">${publicationType}</div>
+                    <div class="publication-tags" style="display:flex; gap:6px; align-items:center;">
+                        <div class="publication-type-tag ${publicationType}">${publicationType}</div>
+                        ${publicationTrack !== 'unknown' ? `<div class="publication-type-tag ${publicationAcronym}">${publicationTrack}</div>` : ''}
+                    </div>
                 </div>
                 <div class="publication-links">
                     <a href="assets/papers/${pub.pdfFile}" target="_blank" class="publication-link paper-link">
@@ -98,7 +110,7 @@ function filterPublications(publicationList, filterType) {
     });
 }
 
-function loadPublicationsSection(publicationsData) {
+function loadPublicationsSection(publicationsData, tracks) {
     const publicationsContainer = document.querySelector('.publications .container');
 
     // Check if section title exists, if not create it
@@ -128,7 +140,7 @@ function loadPublicationsSection(publicationsData) {
 
     // Create and add publication items
     publicationsData.forEach(pub => {
-        const publicationItem = createPublicationItem(pub);
+        const publicationItem = createPublicationItem(pub, tracks);
         publicationList.appendChild(publicationItem);
     });
 
@@ -328,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Load Publications Section
-            loadPublicationsSection(data.publications);
+            loadPublicationsSection(data.publications, data.tracks);
 
             // Load CV Section
             const educationSection = document.querySelector('.education');

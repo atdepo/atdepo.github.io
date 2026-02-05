@@ -11,7 +11,7 @@
     },
     "about": {
         "paragraphs": [
-            "I am a PhD student in Computer Science at the University of Salerno, working under the supervision of Prof. Fabio Palomba and Dott. Stefano Lambiase. My research focuses on developing a large variety of LLM-based solutions that can be applied in real world Software Engineering tasks.",
+            "I am a PhD student in Computer Science at the University of Salerno, working under the supervision of Prof. Fabio Palomba and Prof. Stefano Lambiase. My research focuses on developing a large variety of LLM-based solutions that can be applied in real world Software Engineering tasks.",
             "My research and development efforts are centered on creating Generative AI-powered agents that serve as versatile, adaptable assistants for software engineers, leveraging open-source technologies to enable transparency and collaborative improvement.",
             "Through my Master's Degree years I also gained experience working with industry partners on technical projects, gathering insights of the real problems software engineers have in practice."
         ]
@@ -33,65 +33,92 @@
             "description": "Cognitive theories provide a lens to interpret how large language models process context, reason, and structure their outputs."
         }
     ],
+    "tracks": [
+      {
+        "acronym": "ds",
+        "full_name": "Doctoral Symposium Track"
+      },
+      {
+        "acronym": "rr",
+        "full_name": "Registered Report Track"
+      },
+      {
+        "acronym": "rt",
+        "full_name": "Research Track"
+      },
+      {
+        "acronym": "mt",
+        "full_name": "Main Track"
+      },
+      {
+        "acronym": "td",
+        "full_name": "Tool Demo Track"
+      }
+    ],
     "publications": [
         {
           "title": "Rebuilding AI from the Small: The Path Toward Democratized Intelligence",
           "authors": "<b>A. Della Porta</b>",
-          "journal": "48th International Conference on Software Engineering, Doctoral Symposium Track (ICSE), 2026",
+          "journal": "48th International Conference on Software Engineering (ICSE), 2026",
           "pdfFile": "C11.pdf",
-          "type": "conference"
+          "type": "conference",
+          "track": "ds"
         },
         {
           "title": "Ask, Then Think: Enhancing LLM Performance with Socratic Reasoning",
           "authors": "<b>A. Della Porta</b>, J. Richards, L. Cammarota, S. Lambiase, F. Palomba, ",
-          "journal": "23rd International Mining Software Repositories Conference, Registered Report Track (MSR), 2026",
+          "journal": "23rd International Mining Software Repositories Conference (MSR), 2026",
           "pdfFile": "C10.pdf",
-          "type": "conference"
+          "type": "conference",
+          "track": "rr"
         },
         {
           "title": "Toward Measuring Prompt Quality: A Preliminary Investigation on Prompt Smells",
           "authors": "<b>A. Della Porta</b>, G. Voria, A. Abbate, R. Sulipano, S. Lambiase, G. Catolino, F. Palomba,",
           "journal": "3rd Workshop on Software Quality Assurance for AI (SQA4AI), 2026",
           "pdfFile": "C9.pdf",
-          "type": "conference"
+          "type": "conference",
+          "track": "mt"
         },
         {
           "title": "Teaching Software Engineering for Artificial Intelligence: An Experience Report",
           "authors": "F. Palomba, G. Voria, A. Parziale, V. Pentangelo, <b>A. Della Porta</b>, V. De Martino, G. Recupito, G. Giordano",
           "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
           "pdfFile": "C8.pdf",
-          "type": "conference"
-
+          "type": "conference",
+          "track": "rt"
         },
         {
           "title": "An Evidence-Based Study on the Relationship of Software Engineering Practices on Code Smells in Python ML Projects",
           "authors": "G. Giordano, <b>A. Della Porta</b>, F. Ferrucci, F. Palomba",
           "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
           "pdfFile": "C7.pdf",
-          "type": "conference"
-
+          "type": "conference",
+          "track": "rt"
         },
         {
           "title": "Transparent Machine Learning for Type 1 Diabetes Diagnosis from Gene Expression Data",
           "authors": "R. Carotenuto, V. Pentangelo, <b>A. Della Porta</b>, F. Palomba",
           "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
           "pdfFile": "C6.pdf",
-          "type": "conference"
-
+          "type": "conference",
+          "track": "mt"
         },
         {
           "title": "From Rules to Reports: Enhancing Diabetes Prediction Interpretability with Anchor and LLMs",
           "authors": "F. Festa, <b>A. Della Porta</b>, V. Pentangelo, F. Palomba",
           "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
           "pdfFile": "C5.pdf",
-          "type": "conference"
+          "type": "conference",
+          "track": "mt"
         },
         {
             "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
             "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
             "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
             "pdfFile": "C4.pdf",
-            "type": "conference"
+            "type": "conference",
+            "track": "rt"
 
         },
         {
@@ -99,7 +126,8 @@
             "authors": "<b>A. Della Porta</b>, G. Recupito, S.Lambiase, D. Di Nucci, F. Palomba",
             "journal": "Software Quality Assurance For Artificial Intelligence (SQA4AI), 2025",
             "pdfFile": "C3.pdf",
-            "type": "conference"
+            "type": "conference",
+            "track": "mt"
 
         },
         {
@@ -115,7 +143,8 @@
             "authors": "<b>A. Della Porta</b>, V. De Martino, G. Recupito, C. Iemmino, G. Catolino, D. Di Nucci, F. Palomba",
             "journal": "4th National Conference on Artificial Intelligence (ITAL-IA), 2024",
             "pdfFile": "C2.pdf",
-            "type":"conference"
+            "type":"conference",
+            "track": "mt"
 
         },
         {
@@ -123,7 +152,8 @@
             "authors": "G. Voria, V, Pentangelo, <b>A. Della Porta</b>, S. Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
             "journal": "International Conference on Software Maintenance and Evolution (ICSME), 2022",
             "pdfFile": "C1.pdf",
-            "type":"conference"
+            "type":"conference",
+            "track": "td"
         }
     ],
     "cv": {
