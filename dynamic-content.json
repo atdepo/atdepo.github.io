@@ -1,196 +1,199 @@
 {
-    "profile": {
-        "name": "Antonio Della Porta",
-        "title": "Ph.D. Student",
-        "specialty": "Currently working on Gen AI Agents",
-        "socialLinks": {
-            "linkedin": "https://www.linkedin.com/in/antonio-della-porta-284800198/",
-            "github": "https://github.com/atdepo",
-            "googleScholar": "https://scholar.google.com/citations?hl=en&user=tU51c0cAAAAJ"
-        }
+  "profile": {
+    "name": "Antonio Della Porta",
+    "title": "Ph.D. Student",
+    "specialty": "Currently working on Gen AI Agents",
+    "socialLinks": {
+      "linkedin": "https://www.linkedin.com/in/antonio-della-porta-284800198/",
+      "github": "https://github.com/atdepo",
+      "googleScholar": "https://scholar.google.com/citations?hl=en&user=tU51c0cAAAAJ"
+    }
+  },
+  "about": {
+    "paragraphs": [
+      "I am a PhD student in Computer Science at the University of Salerno, working under the supervision of Prof. Fabio Palomba and Prof. Stefano Lambiase. My research focuses on developing a large variety of LLM-based solutions that can be applied in real world Software Engineering tasks.",
+      "My research and development efforts are centered on creating Generative AI-powered agents that serve as versatile, adaptable assistants for software engineers, leveraging open-source technologies to enable transparency and collaborative improvement.",
+      "Through my Master's Degree years I also gained experience working with industry partners on technical projects, gathering insights of the real problems software engineers have in practice."
+    ]
+  },
+  "research": [
+    {
+      "icon": "handshake",
+      "title": "Generative AI Agents",
+      "description": "Developing autonomous AI systems that can understand complex instructions and execute sophisticated tasks with minimal human supervision."
     },
-    "about": {
-        "paragraphs": [
-            "I am a PhD student in Computer Science at the University of Salerno, working under the supervision of Prof. Fabio Palomba and Prof. Stefano Lambiase. My research focuses on developing a large variety of LLM-based solutions that can be applied in real world Software Engineering tasks.",
-            "My research and development efforts are centered on creating Generative AI-powered agents that serve as versatile, adaptable assistants for software engineers, leveraging open-source technologies to enable transparency and collaborative improvement.",
-            "Through my Master's Degree years I also gained experience working with industry partners on technical projects, gathering insights of the real problems software engineers have in practice."
-        ]
+    {
+      "icon": "terminal",
+      "title": "Prompt Engineering",
+      "description": "Investigating the science of effectively communicating with large language models to improve their performance, reliability, and alignment with human intent."
     },
-    "research": [
-        {
-            "icon": "handshake",
-            "title": "Generative AI Agents",
-            "description": "Developing autonomous AI systems that can understand complex instructions and execute sophisticated tasks with minimal human supervision."
-        },
-        {
-            "icon": "terminal",
-            "title": "Prompt Engineering",
-            "description": "Investigating the science of effectively communicating with large language models to improve their performance, reliability, and alignment with human intent."
-        },
-        {
-            "icon": "brain",
-            "title": "Cognitive Theories in LLMs",
-            "description": "Cognitive theories provide a lens to interpret how large language models process context, reason, and structure their outputs."
-        }
-    ],
-    "tracks": [
+    {
+      "icon": "brain",
+      "title": "Cognitive Theories in LLMs",
+      "description": "Cognitive theories provide a lens to interpret how large language models process context, reason, and structure their outputs."
+    }
+  ],
+  "tracks": [
+    {
+      "acronym": "ds",
+      "full_name": "Doctoral Symposium Track"
+    },
+    {
+      "acronym": "rr",
+      "full_name": "Registered Report Track"
+    },
+    {
+      "acronym": "rt",
+      "full_name": "Research Track"
+    },
+    {
+      "acronym": "mt",
+      "full_name": "Main Track"
+    },
+    {
+      "acronym": "td",
+      "full_name": "Tool Demo Track"
+    }
+  ],
+  "publications": [
+    {
+      "title": "The Language of Security: How Prompt Syntax Shapes Secure Code Generation in Open LLMs",
+      "authors": " M. Cicalese, <b>A. Della Porta</b>, S. Lambiase, E. Iannone, T. Hinrichs, R. Scandariato, F. Palomba",
+      "journal": "42nd International Conference on Software Maintenance and Evolution (ICSME), 2026",
+      "pdfFile": "C12.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "Rebuilding AI from the Small: The Path Toward Democratized Intelligence",
+      "authors": "<b>A. Della Porta</b>",
+      "journal": "48th International Conference on Software Engineering (ICSE), 2026",
+      "pdfFile": "C11.pdf",
+      "type": "conference",
+      "track": "ds"
+    },
+    {
+      "title": "Ask, Then Think: Enhancing LLM Performance with Socratic Reasoning",
+      "authors": "<b>A. Della Porta</b>, J. Richards, L. Cammarota, S. Lambiase, F. Palomba, ",
+      "journal": "23rd International Mining Software Repositories Conference (MSR), 2026",
+      "pdfFile": "C10.pdf",
+      "type": "conference",
+      "track": "rr"
+    },
+    {
+      "title": "Toward Measuring Prompt Quality: A Preliminary Investigation on Prompt Smells",
+      "authors": "<b>A. Della Porta</b>, G. Voria, A. Abbate, R. Sulipano, S. Lambiase, G. Catolino, F. Palomba,",
+      "journal": "3rd Workshop on Software Quality Assurance for AI (SQA4AI), 2026",
+      "pdfFile": "C9.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "Teaching Software Engineering for Artificial Intelligence: An Experience Report",
+      "authors": "F. Palomba, G. Voria, A. Parziale, V. Pentangelo, <b>A. Della Porta</b>, V. De Martino, G. Recupito, G. Giordano",
+      "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
+      "pdfFile": "C8.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "An Evidence-Based Study on the Relationship of Software Engineering Practices on Code Smells in Python ML Projects",
+      "authors": "G. Giordano, <b>A. Della Porta</b>, F. Ferrucci, F. Palomba",
+      "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
+      "pdfFile": "C7.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "Transparent Machine Learning for Type 1 Diabetes Diagnosis from Gene Expression Data",
+      "authors": "R. Carotenuto, V. Pentangelo, <b>A. Della Porta</b>, F. Palomba",
+      "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
+      "pdfFile": "C6.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "From Rules to Reports: Enhancing Diabetes Prediction Interpretability with Anchor and LLMs",
+      "authors": "F. Festa, <b>A. Della Porta</b>, V. Pentangelo, F. Palomba",
+      "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
+      "pdfFile": "C5.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
+      "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
+      "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
+      "pdfFile": "C4.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "Unlocking Code Simplicity: The Role of Prompt Patterns in Managing LLM Code Complexity",
+      "authors": "<b>A. Della Porta</b>, G. Recupito, S.Lambiase, D. Di Nucci, F. Palomba",
+      "journal": "Software Quality Assurance For Artificial Intelligence (SQA4AI), 2025",
+      "pdfFile": "C3.pdf",
+      "type": "conference",
+      "track": "rt"
+    },
+    {
+      "title": "A Novel, Tool-Supported Catalog of Community Smell Symptoms",
+      "authors": "<b>A. Della Porta</b>, S.Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
+      "journal": "Journal of Software Evolution and Process",
+      "pdfFile": "J1.pdf",
+      "type": "journal"
+    },
+    {
+      "title": "Using large language models to support software engineering documentation in waterfall life cycles: Are we there yet?",
+      "authors": "<b>A. Della Porta</b>, V. De Martino, G. Recupito, C. Iemmino, G. Catolino, D. Di Nucci, F. Palomba",
+      "journal": "4th National Conference on Artificial Intelligence (ITAL-IA), 2024",
+      "pdfFile": "C2.pdf",
+      "type": "conference",
+      "track": "mt"
+    },
+    {
+      "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
+      "authors": "G. Voria, V, Pentangelo, <b>A. Della Porta</b>, S. Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
+      "journal": "International Conference on Software Maintenance and Evolution (ICSME), 2022",
+      "pdfFile": "C1.pdf",
+      "type": "conference",
+      "track": "td"
+    }
+  ],
+  "cv": {
+    "education": [
       {
-        "acronym": "ds",
-        "full_name": "Doctoral Symposium Track"
+        "title": "PhD in Computer Science",
+        "institution": "University of Salerno",
+        "period": "Nov.2024 - Present",
+        "description": "Currently enjoying this one🫠"
       },
       {
-        "acronym": "rr",
-        "full_name": "Registered Report Track"
+        "title": "Master Degree in Software Engineering and IT Management",
+        "institution": "University of Salerno",
+        "period": "Oct.2021 - Sept.2023",
+        "description": "<b>Thesis: \"A Novel, Tool-Supported Inspection Procedure to Diagnose Community Smells through the Analysis of Dominant Behaviors\"<br>Final Mark: 110/110 cum laude</b>"
       },
       {
-        "acronym": "rt",
-        "full_name": "Research Track"
-      },
-      {
-        "acronym": "mt",
-        "full_name": "Main Track"
-      },
-      {
-        "acronym": "td",
-        "full_name": "Tool Demo Track"
+        "title": "Bachelor Degree in Computer Science",
+        "institution": "University of Salerno",
+        "period": "2018 - 2021",
+        "description": "<b>Thesis: \"Quantum Computing: Funzionamento e Applicazioni Di Un Modello Di Computazione Non Deterministico\"<br>Final Mark: 110/110 cum laude</b>"
       }
     ],
-    "publications": [
-        {
-          "title": "Rebuilding AI from the Small: The Path Toward Democratized Intelligence",
-          "authors": "<b>A. Della Porta</b>",
-          "journal": "48th International Conference on Software Engineering (ICSE), 2026",
-          "pdfFile": "C11.pdf",
-          "type": "conference",
-          "track": "ds"
-        },
-        {
-          "title": "Ask, Then Think: Enhancing LLM Performance with Socratic Reasoning",
-          "authors": "<b>A. Della Porta</b>, J. Richards, L. Cammarota, S. Lambiase, F. Palomba, ",
-          "journal": "23rd International Mining Software Repositories Conference (MSR), 2026",
-          "pdfFile": "C10.pdf",
-          "type": "conference",
-          "track": "rr"
-        },
-        {
-          "title": "Toward Measuring Prompt Quality: A Preliminary Investigation on Prompt Smells",
-          "authors": "<b>A. Della Porta</b>, G. Voria, A. Abbate, R. Sulipano, S. Lambiase, G. Catolino, F. Palomba,",
-          "journal": "3rd Workshop on Software Quality Assurance for AI (SQA4AI), 2026",
-          "pdfFile": "C9.pdf",
-          "type": "conference",
-          "track": "mt"
-        },
-        {
-          "title": "Teaching Software Engineering for Artificial Intelligence: An Experience Report",
-          "authors": "F. Palomba, G. Voria, A. Parziale, V. Pentangelo, <b>A. Della Porta</b>, V. De Martino, G. Recupito, G. Giordano",
-          "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
-          "pdfFile": "C8.pdf",
-          "type": "conference",
-          "track": "rt"
-        },
-        {
-          "title": "An Evidence-Based Study on the Relationship of Software Engineering Practices on Code Smells in Python ML Projects",
-          "authors": "G. Giordano, <b>A. Della Porta</b>, F. Ferrucci, F. Palomba",
-          "journal": "Software Engineering and Advanced Applications (SEAA), 2025",
-          "pdfFile": "C7.pdf",
-          "type": "conference",
-          "track": "rt"
-        },
-        {
-          "title": "Transparent Machine Learning for Type 1 Diabetes Diagnosis from Gene Expression Data",
-          "authors": "R. Carotenuto, V. Pentangelo, <b>A. Della Porta</b>, F. Palomba",
-          "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
-          "pdfFile": "C6.pdf",
-          "type": "conference",
-          "track": "mt"
-        },
-        {
-          "title": "From Rules to Reports: Enhancing Diabetes Prediction Interpretability with Anchor and LLMs",
-          "authors": "F. Festa, <b>A. Della Porta</b>, V. Pentangelo, F. Palomba",
-          "journal": "5th National Conference on Artificial Intelligence (Ital-IA), 2025",
-          "pdfFile": "C5.pdf",
-          "type": "conference",
-          "track": "mt"
-        },
-        {
-            "title": "Do Prompt Patterns Affect Code Quality? A First Empirical Assessment of ChatGPT-Generated Code",
-            "authors": "<b>A. Della Porta</b>, S.Lambiase, F. Palomba",
-            "journal": "International Conference on Evaluation and Assessment in Software Engineering (EASE), 2025",
-            "pdfFile": "C4.pdf",
-            "type": "conference",
-            "track": "rt"
-
-        },
-        {
-            "title": "Unlocking Code Simplicity: The Role of Prompt Patterns in Managing LLM Code Complexity",
-            "authors": "<b>A. Della Porta</b>, G. Recupito, S.Lambiase, D. Di Nucci, F. Palomba",
-            "journal": "Software Quality Assurance For Artificial Intelligence (SQA4AI), 2025",
-            "pdfFile": "C3.pdf",
-            "type": "conference",
-            "track": "mt"
-
-        },
-        {
-            "title": "A Novel, Tool-Supported Catalog of Community Smell Symptoms",
-            "authors": "<b>A. Della Porta</b>, S.Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
-            "journal": "Journal of Software Evolution and Process",
-            "pdfFile": "J1.pdf",
-            "type":"journal"
-
-        },
-        {
-            "title": "Using large language models to support software engineering documentation in waterfall life cycles: Are we there yet?",
-            "authors": "<b>A. Della Porta</b>, V. De Martino, G. Recupito, C. Iemmino, G. Catolino, D. Di Nucci, F. Palomba",
-            "journal": "4th National Conference on Artificial Intelligence (ITAL-IA), 2024",
-            "pdfFile": "C2.pdf",
-            "type":"conference",
-            "track": "mt"
-
-        },
-        {
-            "title": "Community Smell Detection and Refactoring in SLACK: The CADOCS Project",
-            "authors": "G. Voria, V, Pentangelo, <b>A. Della Porta</b>, S. Lambiase, G. Catolino, F. Palomba, F. Ferrucci",
-            "journal": "International Conference on Software Maintenance and Evolution (ICSME), 2022",
-            "pdfFile": "C1.pdf",
-            "type":"conference",
-            "track": "td"
-        }
-    ],
-    "cv": {
-        "education": [
-            {
-                "title": "PhD in Computer Science",
-                "institution": "University of Salerno",
-                "period": "Nov.2024 - Present",
-                "description": "Currently enjoying this one\uD83E\uDEE0"
-            },
-            {
-                "title": "Master Degree in Software Engineering and IT Management",
-                "institution": "University of Salerno",
-                "period": "Oct.2021 - Sept.2023",
-                "description": "<b>Thesis: \"A Novel, Tool-Supported Inspection Procedure to Diagnose Community Smells through the Analysis of Dominant Behaviors\"<br>Final Mark: 110/110 cum laude</b>"
-            },
-            {
-                "title": "Bachelor Degree in Computer Science",
-                "institution": "University of Salerno",
-                "period": "2018 - 2021",
-                "description": "<b>Thesis: \"Quantum Computing: Funzionamento e Applicazioni Di Un Modello Di Computazione Non Deterministico\"<br>Final Mark: 110/110 cum laude</b>"
-            }
-        ],
-        "research_experience": [
-            {
-                "title": "Research Assistant",
-                "institution": "University of Salerno",
-                "period": "Jan.2024 - Oct.2024",
-                "description": "Worked on the project QualAI - Continuous Quality Assurance for AI Systems"
-            },
-            {
-                "title": "Sofwtare Engineer",
-                "institution": "Minsait",
-                "period": "Jun.2021 - Dec.2023",
-                "description": "Throughout these years I have strengthen my abilities in software engineering, specializing in smart metering solutions that requires high-speed and efficient solutions."
-            }
-
-        ]
-    }
+    "research_experience": [
+      {
+        "title": "Research Assistant",
+        "institution": "University of Salerno",
+        "period": "Jan.2024 - Oct.2024",
+        "description": "Worked on the project QualAI - Continuous Quality Assurance for AI Systems"
+      },
+      {
+        "title": "Sofwtare Engineer",
+        "institution": "Minsait",
+        "period": "Jun.2021 - Dec.2023",
+        "description": "Throughout these years I have strengthen my abilities in software engineering, specializing in smart metering solutions that requires high-speed and efficient solutions."
+      }
+    ]
+  }
 }
