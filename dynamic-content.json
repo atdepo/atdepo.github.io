@@ -61,6 +61,13 @@
       "title": "Understanding Prompt Quality and Its Relation to LLM-based Code Generation",
       "authors": "<b>A. Della Porta</b>, S. Lambiase, V. Pontillo, J. F. Ferreira, A. A. Rahman, C. Ragkhitwetsagul, F. Palomba",
       "journal": "Under Major Revision",
+      "pdfFile": "J3.pdf",
+      "type": "journal"
+    },
+    {
+      "title": "Are Large Language Models Ready for Quantum Software Engineering? A Multivocal Literature Review",
+      "authors": "<b>A. Della Porta</b>, S. Lambiase, A.De Lucia, F. Palomba",
+      "journal": "Under Revision",
       "pdfFile": "J2.pdf",
       "type": "journal"
     },
