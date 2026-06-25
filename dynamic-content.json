@@ -56,6 +56,14 @@
     }
   ],
   "publications": [
+
+    {
+      "title": "Understanding Prompt Quality and Its Relation to LLM-based Code Generation",
+      "authors": "<b>A. Della Porta</b>, S. Lambiase, V. Pontillo, J. F. Ferreira, A. A. Rahman, C. Ragkhitwetsagul, F. Palomba",
+      "journal": "Under Major Revision",
+      "pdfFile": "J2.pdf",
+      "type": "journal"
+    },
     {
       "title": "The Language of Security: How Prompt Syntax Shapes Secure Code Generation in Open LLMs",
       "authors": " M. Cicalese, <b>A. Della Porta</b>, S. Lambiase, E. Iannone, T. Hinrichs, R. Scandariato, F. Palomba",
