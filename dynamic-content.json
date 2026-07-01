@@ -56,7 +56,14 @@
     }
   ],
   "publications": [
-
+    {
+      "title": "TARS: A Theory-of-Mind Agent for Personalized In-IDE Code Comprehension",
+      "authors": "L. Todisco, <b>A. Della Porta</b>, S. Lambiase, F. Palomba",
+      "journal": "42nd International Conference on Software Maintenance and Evolution, Tool Demo Track (ICSME), 2026",
+      "pdfFile": "C13.pdf",
+      "type": "conference",
+      "track": "td"
+    },
     {
       "title": "Understanding Prompt Quality and Its Relation to LLM-based Code Generation",
       "authors": "<b>A. Della Porta</b>, S. Lambiase, V. Pontillo, J. F. Ferreira, A. A. Rahman, C. Ragkhitwetsagul, F. Palomba",
